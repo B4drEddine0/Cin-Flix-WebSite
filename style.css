@@ -37,7 +37,7 @@
 
 
 main{
-    height: 90vh;
+    height: 70vh;
     display: flex;
 }
 .content{
@@ -95,33 +95,31 @@ h1{
     margin-bottom: 10px
 }
 .sec2{
-    height: 60vh;
-    position: relative;
+    height: 40vh;
 }
 .movies{
     display: flex;
-    background-color: #67657150;
     height: 286px;
     align-items: center;
     flex-wrap: wrap;
+    gap: 15px;
 }
 .mov{
     overflow: hidden;
+    background-color: #67657150;
 }
 .movie-card{
     width: 184px;
     height: 255px;
     margin-right: 10px;
+    cursor: pointer;
 }
 .crd{
     margin-bottom: 120px;
-    cursor: pointer;
 }
-.fl:hover{
-    cursor: pointer;
-}
+
 .sec3{
-    height: 120vh;
+    height: 90vh;
 }
 .sec3-top{
     display: flex;
@@ -159,7 +157,6 @@ a{
     display: none;
 }
 .sec3 .movies{
-    background-color: white;
     margin-bottom: 80px;
     text-align: center;
     line-height: 2rem;
@@ -231,6 +228,7 @@ footer{
 .details1{
     height: 100vh;
     background-image: url(images/bg2.png);
+    background-size: cover;
 }
 
 .det1{
@@ -281,6 +279,7 @@ footer{
 .det2{
     height: 45vh;
     margin-top: 40px;
+    position: relative;
 }
 
 .det2 .movies{
@@ -359,4 +358,209 @@ footer{
 }
 .detail{
     margin-top: 15px;
+}
+
+.movie-item{
+    font-size: 10px;
+}
+.lis-card{
+    display: flex;
+    justify-content: space-between;
+}
+.lis-card img{
+   cursor: pointer;
+}
+
+#mode-icon,#arrow{
+    font-size: 50px;
+    cursor: pointer;
+}
+.hamburger{
+    display: none;
+}
+
+.x{
+    display: flex !important;
+    position: absolute;
+    background-color: #FFB100;
+    width: 100%;
+    z-index: 2;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    top: 60px !important;
+    left: 0;
+    transition: 0.3s;
+}
+
+@media(max-width:1024px){
+    .container,.foot-bottom,.foot-mid{
+        max-width: 950px;
+    }
+    main{
+        height: 90vh;
+    }
+    .content{
+        width: 50%;
+    }
+    .bg1{
+        width: 50%;
+        margin: auto;
+    }
+    .bg1 img{
+        width: 100%;
+    }
+    .sec3{
+        height: 140vh;
+    }
+    .sec3-top div{
+        width: 70% !important;
+    }
+    .search{
+        justify-content: center;
+    }
+}
+
+@media(max-width:768px){
+    .container,.foot-bottom,.foot-mid{
+        max-width: 700px;
+    }
+    .content h1,.content h2{
+        font-size: 20px;
+        line-height: 25px;
+    }   
+    .content p{
+        font-size: 10px;
+        line-height: 15px;
+    }
+    .content button{
+        font-size: 12px;
+        height: 40px;
+        width: 400px;
+    }
+    .content a img{
+        width: 15px;
+    }
+    .bg1{
+        margin-top: 100px;
+    }
+    main{
+        height: 60vh;
+    }
+    .sec3{
+        height: 180vh;
+    }
+}
+
+@media(max-width:426px){
+    .navbar img{
+        width: 70px;
+    }
+    .hammm{
+        display: none;
+    }
+    .hamburger{
+        display: block;
+    }
+    .navbar label,#mode-icon{
+        font-size: 30px;
+    }
+    .content h1,.content h2{
+        font-size: 14px;
+        line-height: 15px;
+    }   
+    .content p{
+        font-size: 7px;
+        line-height: 10px;
+    }
+    .content button{
+        font-size: 12px;
+        height: 40px;
+        width: 400px;
+    }
+    .content a img{
+        width: 15px;
+    }
+    main{
+        height: 30vh;
+        position: relative;
+    }
+    .content,.bg1{
+        margin-top: 30px !important;
+    }
+    .content p{
+        margin-top: 5px;
+        margin-bottom: 10px;
+    }
+    .content button{
+        font-size: 7px;
+        height: 20px;
+        width: 200px;
+    }
+    .content li{
+        margin-left: 10px;
+    }
+    .fl img{
+        width: 120px;
+        height: 180px;
+    }
+    .fl{
+        margin-right: -50px !important;
+    }
+    .movies{
+        height: 180px;
+        justify-content: center;
+    }
+    h1{
+        font-size: 15px;
+    }
+    .crd img {
+        width: 120px;
+        height: 150px;
+    }
+    .crd {
+        width: 120px;
+        height: 180px;
+    }
+    .sec3{
+        height: 210vh;
+    }
+    .foot-bottom,.foot-mid{
+        max-width: 350px;
+    }
+    .sec2{
+        height: 30vh;
+    }
+   .lis1 h1{
+    font-size: 30px !important;
+   }
+   .movie-item{
+    width: 100px;
+    height: 180px;
+    margin-right: 70px;
+    }
+    .my-list-container{
+        max-width: 380px;
+    }
+    .det1{
+        flex-direction: column-reverse;
+        max-width: 410px;
+    }
+    .details1{
+        height: 170vh;
+    }
+    .det3,.btn2{
+        display: none;
+    }
+    #str{
+        width: 60%;
+    }
+    .btn1{
+        margin-bottom: 10px;
+    }
+    #prevBtn, #nextBtn{
+        position: static;
+    }
+    
+
 }

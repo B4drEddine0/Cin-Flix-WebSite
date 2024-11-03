@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Details</title>
 </head>
 <body>
@@ -12,13 +13,17 @@
             <div>
                 <img src="images/logo.svg" alt="logo">
             </div>
-            <div>
+            <div class="mode">
+                <i class="fa fa-moon-o" aria-hidden="true" id="mode-icon"></i>
+            </div>
+            <div class="hammm">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="index.html#sec3">Movies</a></li>
-                    <li><a href="">Favoris</a></li>
+                    <li><a href="index.html" class="modeH">Home</a></li>
+                    <li><a href="index.html#sec3" class="modeH">Movies</a></li>
+                    <li><a href="mylist.html" class="modeH">Favoris</a></li>
                 </ul>
             </div>
+            <label for="ham" class="hamburger">&#9776;</label>
         </nav>
     </header>
 
@@ -29,7 +34,7 @@
                 <h1>Mojave Diamonds</h1>
                 <p>Denji has a simple dream—to live a happy and peaceful life, spending time with a girl he likes. This is a far cry from reality, however, as Denji is forced by the yakuza into killing devils in order to pay off his crushing debts. Using his pet devil Pochita as a ...
                 </p>
-                <img src="images/stars.png" alt="stars">
+                <img src="images/stars.png" alt="stars" id="str">
                 <p>Action • Movie</p>
                 <button class="btn1">Watch Now</button>
                 <button class="btn2">Trailer</button>
@@ -55,7 +60,7 @@
             </div>
             
         </div>
-        <div class="movies" style="gap: 15px;text-align: center;">
+        <div  class="films" style="display: flex;overflow: hidden;gap: 15px;">
             <div class="movie-card" data-title="Hypnotic" data-image="images/mv1.png">
                  
                 <img src="images/mv1.png" alt="Movies">
@@ -87,13 +92,45 @@
             <h3>The Pregnancy </h3>
             <p><pre>2024        104m</pre></p>
         </div>
+        <div class="movie-card crd" data-title="The DAYS" data-image="images/mv7.png">
+            <img src="images/mv7.png" alt="Movies">
+            <h3>THE DAYS</h3>
+            <p><pre>2024        104m</pre></p>
         </div>
+        <div class="movie-card crd" data-title="Days of Daisy" data-image="images/mv8.png">
+            <img src="images/mv8.png" alt="Movies">
+            <h3>Days of Daisy</h3>
+            <p><pre>2024        104m</pre></p>
+        </div>
+        <div class="movie-card crd" data-title="Turn of the Tide" data-image="images/mv9.png">
+            <img src="images/mv9.png" alt="Movies">
+            <h3>Turn of the Tide</h3>
+            <p><pre>2024        104m</pre></p>
+        </div>
+        <div class="movie-card crd" data-title="The Prank Panel" data-image="images/mv10.png">
+            <img src="images/mv10.png" alt="Movies">
+            <h3>The Prank Panel</h3>
+            <p><pre>2024        104m</pre></p>
+        </div>
+        <div class="movie-card crd" data-title="The Idol" data-image="images/mv11.png">
+            <img src="images/mv11.png" alt="Movies">
+            <h3>The Idol</h3>
+            <p><pre>2024        104m</pre></p>
+        </div>
+        <div class="movie-card crd" data-title="The Gryphon" data-image="images/mv12.png">
+            <img src="images/mv12.png" alt="Movies">
+            <h3>The Gryphon</h3>
+            <p><pre>2024        104m</pre></p>
+        </div>
+        </div>
+            <button id="prevBtn"><i class="fa fa-chevron-circle-left" aria-hidden="true" id="arrow"></i></button>
+            <button id="nextBtn"><i class="fa fa-chevron-circle-right" aria-hidden="true" id="arrow"></i></button>
     </section>
 
 
     <section class="container det3">
         <div class="sec3-top">
-            <h1>
+            <h1 class="modeH">
                 Comments
             </h1>
             <div style="width:75%;">
@@ -113,11 +150,11 @@
                 <div class="comment detail">
                     <h1>Andrew Jones</h1>
                     <h3>Product Developer at Webflow</h3>
-                    <p>It works really wonders in the hybrid culture. No echo and seamless integration with the current workflow. Love this application.</p>
+                    <p class="modeP">It works really wonders in the hybrid culture. No echo and seamless integration with the current workflow. Love this application.</p>
                     <div class="rating">
-                        <p>Rating :</p>
+                        <p class="modeP">Rating :</p>
                         <img src="images/Rating.svg" alt="stars" id="rateImg">
-                        <p>4.6</p>
+                        <p class="modeP">4.6</p>
                     </div>
                 </div>
             </div>
@@ -128,11 +165,11 @@
                 <div class="comment detail">
                     <h1>Lauren White</h1>
                     <h3>Product Manager at Zapier</h3>
-                    <p>It works really wonders in the hybrid culture. No echo and seamless integration with the current workflow. Love this application.</p>
+                    <p class="modeP">It works really wonders in the hybrid culture. No echo and seamless integration with the current workflow. Love this application.</p>
                     <div class="rating">
-                        <p>Rating :</p>
+                        <p class="modeP">Rating :</p>
                         <img src="images/Rating.svg" alt="stars" id="rateImg">
-                        <p>4.6</p>
+                        <p class="modeP">4.6</p>
                     </div>
                 </div>
             </div>
@@ -143,11 +180,11 @@
                 <div class="comment detail">
                     <h1>Adam Smith</h1>
                     <h3>Web Designer at Spotify</h3>
-                    <p>It works really wonders in the hybrid culture. No echo and seamless integration with the current workflow. Love this application.</p>
+                    <p class="modeP">It works really wonders in the hybrid culture. No echo and seamless integration with the current workflow. Love this application.</p>
                     <div class="rating">
-                        <p>Rating :</p>
+                        <p class="modeP">Rating :</p>
                         <img src="images/Rating.svg" alt="stars" id="rateImg">
-                        <p>4.6</p>
+                        <p class="modeP">4.6</p>
                     </div>
                 </div>
             </div>
@@ -189,6 +226,7 @@ function liked(e){
         likeCount.textContent = likeinteger;
         like.src ="images/liked.svg";
         
+        
     }else{
         like.src = "images/like.svg";
         likeinteger--;
@@ -198,16 +236,20 @@ function liked(e){
 like.addEventListener("click",liked);
 
 /***********************************************/
-var input = document.getElementById('search');
-var index = 1;
-index = localStorage.getItem("Limit");
+const input = document.getElementById('search');
+const commentsContainer = document.querySelector('.Comments');
 
-function addComment() {
-    const comments = document.querySelector('.Comments');
-    const commentaire = input.value;
-    
 
-    const newComment = `
+const loadComments = () => {
+    const comments = JSON.parse(localStorage.getItem('comments')) || [];
+    comments.forEach(comment => {
+        commentsContainer.innerHTML += InsertComment(comment);
+    });
+};
+
+
+const InsertComment = (comment) => {
+    return `
         <div class="com">
             <div class="prof">
                 <img src="images/anony.svg" alt="profile">
@@ -215,35 +257,34 @@ function addComment() {
             <div class="comment detail">
                 <h1>Anonymous</h1>
                 <h3>Website Visitor</h3>
-                <p>${commentaire}</p>
+                <p class="modeP">${comment}</p>
                 <div class="rating">
-                    <p>Rating :</p>
+                    <p class="modeP">Rating :</p>
                     <img src="images/Rating.svg" alt="stars" class="rateImg" style="cursor:pointer;" onclick="AddRate(this)">
-                    <input type="text" class="rating-input" style="display:none;" placeholder="Enter rating (e.g., 4.6)" onblur="updateRate(this)">
+                    <input type="text" class="rating-input modeP" style="display:none;" placeholder="Enter rating (e.g., 4.6)" onblur="updateRate(this)">
                     <p class="rating-value"></p>
                 </div>
             </div>
         </div>
     `;
+};
 
-    comments.innerHTML += newComment;
-    localStorage.setItem('comment'+index,newComment);
+const addComment = () => {
+    const commentaire = input.value.trim();
+    if (!commentaire) return alert("Please enter a comment.");
+
+    const comments = JSON.parse(localStorage.getItem('comments')) || [];
+    comments.push(commentaire);
+    localStorage.setItem('comments', JSON.stringify(comments));
+
+    commentsContainer.innerHTML += InsertComment(commentaire);
     alert("Your Comment has been Added");
     input.value = "";
-    index++;
-    localStorage.setItem("Limit",index);
-}
+};
 
+loadComments();
 
-const comments = document.querySelector('.Comments');
-var limit = localStorage.getItem("Limit");
-    for(i = 0; i <= limit;i++){
-        if(localStorage.getItem("comment"+i) !== null){
-            comments.innerHTML += localStorage.getItem("comment"+i);
-        }
-    }
-
-
+document.getElementById('comment-btn').addEventListener('click', addComment);
 
 /*******************************************************************************************/
 
@@ -259,33 +300,135 @@ function updateRate(input) {
     ratingValue.innerText = ratingText;
     input.style.display = 'none'; 
 }
-
-document.getElementById('comment-btn').addEventListener('click', addComment);
 /*****************************************************************************************/
+        const movieCards = document.querySelectorAll('.movie-card');
+
+        movieCards.forEach(card => {
+        card.addEventListener('click', function() {
+        const title = this.getAttribute('data-title');
+        const image = this.getAttribute('data-image');
+
+        localStorage.setItem('movieTitle', title);
+        localStorage.setItem('movieImage', image);
+
+        window.location.href = 'details.html';
+        });
+        });
+
     const title = localStorage.getItem('movieTitle');
     const image = localStorage.getItem('movieImage');
 
     document.querySelector('h1').textContent = title; 
-    document.querySelector('.img2').src = image; 
+    document.querySelector('.img2').src = image;
+     
 
     /***********************************************************************************/
     const list = document.getElementById('list');
+
+    let myList = JSON.parse(localStorage.getItem('myList')) || [];
    
-function listed(e){
+   
+    const isInList = myList.some(movie => movie.title === title);
+    list.src = isInList ? "images/listadded.png" : "images/addlist.svg";
+
+    function listed(e){
     e.preventDefault();
-    if(list.src.endsWith("list.svg")){
-        list.src ="images/listadded.png";
-        
-    }else{
+    
+    
+    const movie = {
+        title: title,
+        image: image
+    };
+
+      const movieIndex = myList.findIndex(m => m.title === movie.title);
+
+    if (movieIndex === -1) {
+        myList.push(movie); 
+        list.src = "images/listadded.png"; 
+    } else { 
+        myList.splice(movieIndex, 1); 
         list.src = "images/addlist.svg";
     }
+
+
+    localStorage.setItem('myList', JSON.stringify(myList));
 }
-list.addEventListener("click",listed);
+
+    list.addEventListener("click", listed);
+
+/***************************************************************************************************/
+const films = document.querySelector('.films');
+
+function moveLeft() {
+    
+    films.scrollBy({
+        top:0,
+        left:-184,
+        behavior:"smooth"
+    });
+}
+
+function moveRight() {
+
+    films.scrollBy({
+        top:0,
+        left:184,
+        behavior:"smooth"
+    });
+}
+
+document.getElementById('prevBtn').addEventListener('click', moveLeft);
+document.getElementById('nextBtn').addEventListener('click', moveRight);
 
 </script>
 
+<script defer>
+    const mode = document.querySelector(".mode");
+    const isDark = localStorage.getItem('isDark');
+    if(isDark === 'Enabled'){
+            mode.innerHTML= `<i class="fa fa-sun-o" aria-hidden="true" id="mode-icon"></i>`
+            document.body.style.backgroundColor = 'black';
+            document.body.style.color = 'white';
+            document.querySelectorAll('.modeH').forEach(txt => txt.style.color = 'white');
+            document.querySelectorAll('.modeP').forEach(p => p.style.color = 'black');
+            document.querySelectorAll('#arrow').forEach(ar => ar.style.color = 'white');
+    }else{
+            mode.innerHTML= `<i class="fa fa-moon-o" aria-hidden="true" id="mode-icon"></i>`
+            document.body.style.backgroundColor = 'white';
+            document.body.style.color = 'black';
+            document.querySelectorAll('.modeH').forEach(txt => txt.style.color = 'black');
+    }
+    mode.addEventListener('click',function(){
+        if(document.body.style.backgroundColor==='white'){
+            mode.innerHTML= `<i class="fa fa-sun-o" aria-hidden="true" id="mode-icon"></i>`
+            document.body.style.backgroundColor = 'black';
+            document.body.style.color = 'white';
+            document.querySelectorAll('.modeH').forEach(txt => txt.style.color = 'white');
+            document.querySelectorAll('.modeP').forEach(p => p.style.color = 'black');
+            document.querySelectorAll('#arrow').forEach(ar => ar.style.color = 'white');
+            localStorage.setItem('isDark','Enabled');
+            
+        }else{
+            mode.innerHTML= `<i class="fa fa-moon-o" aria-hidden="true" id="mode-icon"></i>`
+            document.body.style.backgroundColor = 'white';
+            document.body.style.color = 'black';
+            document.querySelectorAll('.modeH').forEach(txt => txt.style.color = 'black');
+            localStorage.setItem('isDark','Disabled');
+        }
+        
+})
+/********************************************************************/
+        const ham = document.querySelector('.hamburger');
+        const hammm = document.querySelector('.hammm');
 
-
+        ham.addEventListener('click',function(){
+            if(hammm.className==='hammm'){
+                hammm.classList.add('x');
+            }else{
+                hammm.classList.remove('x');
+            }
+        
+        })
 </script>
 </body>
 </html>

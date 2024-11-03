@@ -13,13 +13,18 @@
             <div>
                 <img src="images/logo.svg" alt="logo">
             </div>
-            <div>
+            <div class="mode">
+                <i class="fa fa-moon-o" aria-hidden="true" id="mode-icon"></i>
+            </div>
+            <div class="hammm">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="#sec3">Movies</a></li>
-                    <li><a href="">Favoris</a></li>
+                    <li><a href="index.html" class="modeH">Home</a></li>
+                    <li><a href="#sec3" class="modeH">Movies</a></li>
+                    <li><a href="mylist.html" class="modeH">Favoris</a></li>
                 </ul>
             </div>
+            <label for="ham" class="hamburger">&#9776;</label>
+
         </nav>
     </header>
 
@@ -28,10 +33,10 @@
             <h2>
                 Hi, We are a Streaming Platform
             </h2>
-            <h1>
+            <h1 class="modeH">
                 Movies WebSite Who Build in HTML & CSS
             </h1>
-            <p>
+            <p class="modeH">
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque quis cum est earum harum tempora. Similique maxime ab, laudantium sit veniam quia accusamus incidunt quasi quo quisquam officia unde earum?
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque aperiam earum eligendi ipsum inventore nihil pariatur adipisci nulla id, magnam, quae reiciendis perspiciatis non sunt impedit ipsam ullam cum consequatur?
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut doloremque provident animi architecto ea eveniet, ratione pariatur facere minima, vero voluptatum voluptatem accusantium culpa saepe. Perferendis cum voluptatem expedita illo!
@@ -120,8 +125,6 @@
                 </div>
             </div>
             </div>
-            <button id="prevBtn"><img src="images/previous.png" alt=""></button>
-            <button id="nextBtn"><img src="images/next.png" alt="next"></button>
             
     </section>
 
@@ -244,6 +247,40 @@
         window.location.href = 'details.html';
     });
 });
+
+/*****************************************************************************/
+    const mode = document.querySelector(".mode");
+    const isDark = localStorage.getItem('isDark');
+    if(isDark === 'Enabled'){
+            mode.innerHTML= `<i class="fa fa-sun-o" aria-hidden="true" id="mode-icon"></i>`
+            document.body.style.backgroundColor = 'black';
+            document.body.style.color = 'white';
+            document.querySelectorAll('.modeH').forEach(txt => txt.style.color = 'white');
+    }else{
+            mode.innerHTML= `<i class="fa fa-moon-o" aria-hidden="true" id="mode-icon"></i>`
+            document.body.style.backgroundColor = 'white';
+            document.body.style.color = 'black';
+            document.querySelectorAll('.modeH').forEach(txt => txt.style.color = 'black');
+    }
+
+
+    mode.addEventListener('click',function(){
+        if(document.body.style.backgroundColor==='white'){
+            mode.innerHTML= `<i class="fa fa-sun-o" aria-hidden="true" id="mode-icon"></i>`
+            document.body.style.backgroundColor = 'black';
+            document.body.style.color = 'white';
+            document.querySelectorAll('.modeH').forEach(txt => txt.style.color = 'white');
+            localStorage.setItem('isDark','Enabled');
+        }else{
+            mode.innerHTML= `<i class="fa fa-moon-o" aria-hidden="true" id="mode-icon"></i>`
+            document.body.style.backgroundColor = 'white';
+            document.body.style.color = 'black';
+            document.querySelectorAll('.modeH').forEach(txt => txt.style.color = 'black');
+            localStorage.setItem('isDark','Disabled');
+        }
+        
+    })
+
  </script>
 </body>
 </html>

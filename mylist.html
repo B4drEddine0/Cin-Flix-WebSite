@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>My List</title>
+</head>
+<body>
+    <header class="container">
+        <nav class="navbar">
+            <div>
+                <img src="images/logo.svg" alt="logo">
+            </div>
+            <div class="mode">
+                <i class="fa fa-moon-o" aria-hidden="true" id="mode-icon"></i>
+            </div>
+            <div class="hammm">
+                <ul>
+                    <li><a href="index.html" class="modeH">Home</a></li>
+                    <li><a href="index.html#sec3" class="modeH">Movies</a></li>
+                    <li><a href="mylist.html" class="modeH">Favoris</a></li>
+                </ul>
+            </div>
+            <label for="ham" class="hamburger">&#9776;</label>
+        </nav>
+    </header>
+
+    <section class="container lis1" style="margin-top: 80px;">
+        <h1 style="text-align: center; font-size: 60px;color: #FFB100;;">My Favourite</h1>
+             <hr>   
+        <div class="my-list-container" style="display: flex; height: 70vh;margin-top: 20px;gap: 12px;flex-wrap: wrap;">
+            
+        </div>
+    </section>
+
+    
+    <footer>
+        <div class="foot-top">
+             <h1>
+                Follow us!
+             </h1>
+        </div>
+       
+        <div class="foot-mid">
+            <hr>
+        </div>
+        <div class="foot-bottom">
+            <p>© Copyright  2024 BadrEddine | All rights reserved</p>
+
+            <ul>
+                <li><a href=""><img src="images/yt-light.svg" alt="icons"></a></li>
+                <li><a href=""><img src="images/upwork2-light.svg" alt="icons"></a></li>
+                <li><a href=""><img src="images/github-light.svg" alt="icons"></a></li>
+                <li><a href=""><img src="images/linkedin-light.svg" alt="icons"></a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script>
+        const myListContainer = document.querySelector('.my-list-container');
+
+        const myList = JSON.parse(localStorage.getItem('myList')) || [];
+
+        function renderMyList() {
+            myListContainer.innerHTML = ''; 
+        myList.forEach(movie => {
+            const movieElement = document.createElement('div');
+            movieElement.className = 'movie-item';
+            movieElement.innerHTML = `
+                <img src="${movie.image}" alt="${movie.title}">
+                <div class="lis-card">
+                <h2>${movie.title}</h2><img src="images/remove.svg" alt="remove" class="remove-icon">
+                </div>
+            `;
+            const removeIcon = movieElement.querySelector('.remove-icon');
+            removeIcon.addEventListener('click', () => removeMovie(movie.title));
+
+            myListContainer.appendChild(movieElement);
+        });
+
+        function removeMovie(title) {
+    
+            const movieIndex = myList.findIndex(movie => movie.title === title);
+
+            if (movieIndex !== -1) {
+
+                myList.splice(movieIndex, 1);
+                localStorage.setItem('myList', JSON.stringify(myList));
+                renderMyList();
+            }
+        }}
+        renderMyList();
+
+    </script>
+    <script>
+        const mode = document.querySelector(".mode");
+        const isDark = localStorage.getItem('isDark');
+         if(isDark === 'Enabled'){
+                mode.innerHTML= `<i class="fa fa-sun-o" aria-hidden="true" id="mode-icon"></i>`
+                document.body.style.backgroundColor = 'black';
+                document.body.style.color = 'white';
+                document.querySelectorAll('.modeH').forEach(txt => txt.style.color = 'white');
+         }else{
+                mode.innerHTML= `<i class="fa fa-moon-o" aria-hidden="true" id="mode-icon"></i>`
+                document.body.style.backgroundColor = 'white';
+                document.body.style.color = 'black';
+                document.querySelectorAll('.modeH').forEach(txt => txt.style.color = 'black');
+         }
+
+        mode.addEventListener('click',function(){
+            if(document.body.style.backgroundColor==='white'){
+                mode.innerHTML= `<i class="fa fa-sun-o" aria-hidden="true" id="mode-icon"></i>`
+                document.body.style.backgroundColor = 'black';
+                document.body.style.color = 'white';
+                document.querySelectorAll('.modeH').forEach(txt => txt.style.color = 'white');
+                localStorage.setItem('isDark','Enabled');
+            }else{
+                mode.innerHTML= `<i class="fa fa-moon-o" aria-hidden="true" id="mode-icon"></i>`
+                document.body.style.backgroundColor = 'white';
+                document.body.style.color = 'black';
+                document.querySelectorAll('.modeH').forEach(txt => txt.style.color = 'black');
+                localStorage.setItem('isDark','Disabled');
+            }
+            
+        })
+
+        /************************************************************************************/
+        const ham = document.querySelector('.hamburger');
+        const hammm = document.querySelector('.hammm');
+
+        ham.addEventListener('click',function(){
+            if(hammm.className==='hammm'){
+                hammm.classList.add('x');
+            }else{
+                hammm.classList.remove('x');
+            }
+        
+        })
+    </script>
+</body>
+</html>
