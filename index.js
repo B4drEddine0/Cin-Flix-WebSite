@@ -21,7 +21,7 @@ animateFilms();
 /*********************************************************************************************** */
 
 const input = document.getElementById('search'); 
-const card = document.querySelectorAll('.movie-card');
+const card = document.querySelectorAll('.crd');
 
 function liveSearch(){
     for(let i=0;i<card.length;i++){
